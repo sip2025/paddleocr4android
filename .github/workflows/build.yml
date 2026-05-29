@@ -40,17 +40,17 @@ jobs:
 
     - name: Build with Gradle
       run: |
-        ./gradlew :PaddleOCR4Android:assembleRelease
-        ./gradlew :app:assembleRelease
+        ./gradlew :ncnnAndroidPPOCR:assembleRelease
+        ./gradlew :ncnndemo:assembleRelease
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: app-release-apk
-        path: app/build/outputs/apk/release/*.apk
+        path: ncnndemo/build/outputs/apk/release/*.apk
 
     - name: Upload AAR Artifact
       uses: actions/upload-artifact@v4
       with:
         name: paddleocr4android-aar
-        path: PaddleOCR4Android/build/outputs/aar/*.aar
+        path: ncnnAndroidPPOCR/build/outputs/aar/*.aar
